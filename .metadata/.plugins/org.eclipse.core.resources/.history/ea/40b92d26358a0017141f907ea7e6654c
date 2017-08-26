@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionLT extends Instruction {
+
+	public static final String NAME = "LT";
+
+	public static int opcode = 12;
+
+	public InstructionLT(String content, int index) {
+		super(content, index);
+	}
+
+}

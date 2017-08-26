@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionADDRESS extends Instruction {
+
+	public static final String NAME = "SHA3";
+
+	public static int opcode = 32;
+
+	public InstructionADDRESS(String content, int index) {
+		super(content, index);
+	}
+
+}

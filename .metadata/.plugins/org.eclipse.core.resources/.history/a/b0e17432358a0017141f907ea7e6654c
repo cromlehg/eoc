@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionSGT extends Instruction {
+
+	public static final String NAME = "SGT";
+
+	public static int opcode = 15;
+
+	public InstructionSGT(String content, int index) {
+		super(content, index);
+	}
+
+}

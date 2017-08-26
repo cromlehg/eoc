@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionSWAP14 extends AbstractInstructionPUSH {
+	
+	public static final String NAME = "SWAP14";
+	
+	public static int opcode = 157;
+
+	public InstructionSWAP14(String content, int index) {
+		super(content, index);
+	}
+	
+}

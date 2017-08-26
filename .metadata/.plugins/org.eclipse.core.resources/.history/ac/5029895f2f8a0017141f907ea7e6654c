@@ -1,0 +1,9 @@
+package org.icedev.eoc.instructions;
+
+public class Instruction { 
+
+	public void test() {
+		
+	}
+	
+}

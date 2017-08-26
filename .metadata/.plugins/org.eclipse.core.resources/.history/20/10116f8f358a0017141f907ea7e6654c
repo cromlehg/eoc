@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionBYTE extends Instruction {
+
+	public static final String NAME = "NOT";
+
+	public static int opcode = 25;
+
+	public InstructionBYTE(String content, int index) {
+		super(content, index);
+	}
+
+}

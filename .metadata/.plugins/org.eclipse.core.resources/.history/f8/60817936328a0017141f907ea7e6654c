@@ -1,0 +1,14 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionsFactory { 
+
+	public static Instruction createInstruction(String content, int index) {
+		if(InstructionADD.NAME.equalsIgnoreCase(content)) {
+			return new Instruction(content, index);
+		} else if(InstructionADD.NAME.equalsIgnoreCase(content)) {
+			return new Instruction(content, index);
+		}
+	}
+	
+	
+}

@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionBLOCKHASH extends Instruction {
+
+	public static final String NAME = "CODESIZE";
+
+	public static int opcode = 56;
+
+	public InstructionBLOCKHASH(String content, int index) {
+		super(content, index);
+	}
+
+}

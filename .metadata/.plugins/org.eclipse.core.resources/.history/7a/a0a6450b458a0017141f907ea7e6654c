@@ -1,0 +1,18 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionMSTORE extends Instruction {
+
+	public static final String NAME = "MSTORE";
+
+	public static int opcode = 82;
+
+	public InstructionMSTORE(String content, int index) {
+		super(content, index);
+	}
+	
+	@Override
+	public String getName() {
+		return NAME;
+	}
+
+}

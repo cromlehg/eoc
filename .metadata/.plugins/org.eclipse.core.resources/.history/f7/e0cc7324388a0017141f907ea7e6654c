@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionPOP extends Instruction {
+
+	public static final String NAME = "GASLIMIT";
+
+	public static int opcode = 69;
+
+	public InstructionPOP(String content, int index) {
+		super(content, index);
+	}
+
+}

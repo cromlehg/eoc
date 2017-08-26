@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionMSTORE extends Instruction {
+
+	public static final String NAME = "MLOAD";
+
+	public static int opcode = 81;
+
+	public InstructionMSTORE(String content, int index) {
+		super(content, index);
+	}
+
+}

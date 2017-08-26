@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionCALLER extends Instruction {
+
+	public static final String NAME = "ORIGIN";
+
+	public static int opcode = 50;
+
+	public InstructionCALLER(String content, int index) {
+		super(content, index);
+	}
+
+}

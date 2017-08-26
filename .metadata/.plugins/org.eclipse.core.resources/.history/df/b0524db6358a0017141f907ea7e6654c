@@ -1,0 +1,104 @@
+package org.icedev.eoc.instructions;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class InstructionsFactory {
+
+	Map<Integer, Class<? extends Instruction>> instructions = new HashMap<Integer, Class<? extends Instruction>>();
+	
+	{
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionADD.opcode, InstructionADD.class);
+		instructions.put(InstructionMUL.opcode, InstructionMUL.class);
+		instructions.put(InstructionSUB.opcode, InstructionSUB.class);
+		instructions.put(InstructionDIV.opcode, InstructionDIV.class);
+		instructions.put(InstructionSDIV.opcode, InstructionSDIV.class);
+		instructions.put(InstructionMOD.opcode, InstructionMOD.class);
+		instructions.put(InstructionSMOD.opcode, InstructionSMOD.class);
+		instructions.put(InstructionADDMOD.opcode, InstructionADDMOD.class);
+		instructions.put(InstructionMULMOD.opcode, InstructionMULMOD.class);
+		instructions.put(InstructionEXP.opcode, InstructionEXP.class);
+		instructions.put(InstructionSIGNEXTEND.opcode, InstructionSIGNEXTEND.class);
+
+		instructions.put(InstructionLT.opcode, InstructionLT.class);
+		instructions.put(InstructionGT.opcode, InstructionGT.class);
+		instructions.put(InstructionSLT.opcode, InstructionSLT.class);
+		instructions.put(InstructionSGT.opcode, InstructionSGT.class);
+		instructions.put(InstructionEQ.opcode, InstructionEQ.class);
+		instructions.put(InstructionISZERO.opcode, InstructionISZERO.class);
+		instructions.put(InstructionAND.opcode, InstructionAND.class);
+		instructions.put(InstructionOR.opcode, InstructionOR.class);
+		instructions.put(InstructionXOR.opcode, InstructionXOR.class);
+		instructions.put(InstructionNOT.opcode, InstructionNOT.class);
+		instructions.put(InstructionBYTE.opcode, InstructionBYTE.class);
+		
+		instructions.put(InstructionSHA3.opcode, InstructionSHA3.class);
+		
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		
+	}
+	
+	public static Instruction createInstruction(String content, int index) {
+
+		String strCode = content.substring(index, index + 2);
+
+//		int code = Integer.valueOf(strCode, 16);
+
+		if (InstructionADD.NAME.equalsIgnoreCase(content)) {
+			return new Instruction(content, index);
+		} else if (InstructionADD.NAME.equalsIgnoreCase(content)) {
+			return new Instruction(content, index);
+		}
+		return null;
+	}
+
+}

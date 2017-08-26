@@ -1,0 +1,7 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionADD extends Instruction {
+
+	public static final String NAME = "ADD";
+	
+}

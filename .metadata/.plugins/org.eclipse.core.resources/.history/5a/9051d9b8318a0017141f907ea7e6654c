@@ -1,0 +1,7 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionSMOD extends Instruction {
+
+	public static final String NAME = "SMOD";
+	
+}

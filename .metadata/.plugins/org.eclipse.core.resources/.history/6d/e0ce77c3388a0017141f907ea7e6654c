@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class AbstractInstructionPUSH extends Instruction {
+
+	public static final String NAME = "SHA3";
+
+	public static int opcode = 32;
+
+	public AbstractInstructionPUSH(String content, int index) {
+		super(content, index);
+	}
+
+}

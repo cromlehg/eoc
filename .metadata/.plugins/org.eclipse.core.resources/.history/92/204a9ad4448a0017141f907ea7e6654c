@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionLOG4 extends AbstractInstructionLOG {
+	
+	public static final String NAME = "LOG4";
+	
+	public static int opcode = 164;
+
+	public InstructionLOG4(String content, int index) {
+		super(content, index);
+	}
+	
+}

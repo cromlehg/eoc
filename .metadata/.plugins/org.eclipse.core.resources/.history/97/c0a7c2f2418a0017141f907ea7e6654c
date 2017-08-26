@@ -1,0 +1,14 @@
+package org.icedev.eoc.instructions;
+
+public class AbstractInstructionPUSH extends Instruction {
+
+	public AbstractInstructionPUSH(String content, int index) {
+		super(content, index);
+	}
+
+	@Override
+	public int endPos() {
+		return super.endPos() + 2;
+	}
+
+}

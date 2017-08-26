@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionDUP4 extends AbstractInstructionPUSH {
+	
+	public static final String NAME = "DUP4";
+	
+	public static int opcode = 131;
+
+	public InstructionDUP4(String content, int index) {
+		super(content, index);
+	}
+	
+}

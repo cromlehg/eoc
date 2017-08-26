@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionEXTCODESIZE extends Instruction {
+
+	public static final String NAME = "GASPRICE";
+
+	public static int opcode = 58;
+
+	public InstructionEXTCODESIZE(String content, int index) {
+		super(content, index);
+	}
+
+}

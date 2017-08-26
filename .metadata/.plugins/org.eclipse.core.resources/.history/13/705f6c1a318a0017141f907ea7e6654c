@@ -1,0 +1,6 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionsFactory { 
+
+	
+}

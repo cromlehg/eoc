@@ -1,0 +1,40 @@
+package org.icedev.eoc.instructions;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class InstructionsFactory {
+
+	Map<Integer, Class<? extends Instruction>> instructions = new HashMap<Integer, Class<? extends Instruction>>();
+	
+	{
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);		
+	}
+	
+	public static Instruction createInstruction(String content, int index) {
+
+		String strCode = content.substring(index, index + 2);
+
+//		int code = Integer.valueOf(strCode, 16);
+
+		if (InstructionADD.NAME.equalsIgnoreCase(content)) {
+			return new Instruction(content, index);
+		} else if (InstructionADD.NAME.equalsIgnoreCase(content)) {
+			return new Instruction(content, index);
+		}
+		return null;
+	}
+
+}

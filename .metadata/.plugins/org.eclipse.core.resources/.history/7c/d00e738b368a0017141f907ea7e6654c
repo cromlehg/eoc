@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionCALLDATALOAD extends Instruction {
+
+	public static final String NAME = "CALLVALUE";
+
+	public static int opcode = 52;
+
+	public InstructionCALLDATALOAD(String content, int index) {
+		super(content, index);
+	}
+
+}

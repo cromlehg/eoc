@@ -1,0 +1,18 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionDUP13 extends AbstractInstructionPUSH {
+	
+	public static final String NAME = "DUP13";
+	
+	public static int opcode = 139;
+
+	public InstructionDUP13(String content, int index) {
+		super(content, index);
+	}
+	
+	@Override
+	public String toString() {
+		return NAME;
+	}
+	
+}

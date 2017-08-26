@@ -1,0 +1,113 @@
+package org.icedev.eoc.instructions;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class InstructionsFactory {
+
+	Map<Integer, Class<? extends Instruction>> instructions = new HashMap<Integer, Class<? extends Instruction>>();
+
+	{
+		// 0s: Stop and Arithmetic Operations
+		instructions.put(InstructionSTOP.opcode, InstructionSTOP.class);
+		instructions.put(InstructionADD.opcode, InstructionADD.class);
+		instructions.put(InstructionMUL.opcode, InstructionMUL.class);
+		instructions.put(InstructionSUB.opcode, InstructionSUB.class);
+		instructions.put(InstructionDIV.opcode, InstructionDIV.class);
+		instructions.put(InstructionSDIV.opcode, InstructionSDIV.class);
+		instructions.put(InstructionMOD.opcode, InstructionMOD.class);
+		instructions.put(InstructionSMOD.opcode, InstructionSMOD.class);
+		instructions.put(InstructionADDMOD.opcode, InstructionADDMOD.class);
+		instructions.put(InstructionMULMOD.opcode, InstructionMULMOD.class);
+		instructions.put(InstructionEXP.opcode, InstructionEXP.class);
+		instructions.put(InstructionSIGNEXTEND.opcode, InstructionSIGNEXTEND.class);
+
+		// 10s: Comparison & Bitwise Logic Operations
+		instructions.put(InstructionLT.opcode, InstructionLT.class);
+		instructions.put(InstructionGT.opcode, InstructionGT.class);
+		instructions.put(InstructionSLT.opcode, InstructionSLT.class);
+		instructions.put(InstructionSGT.opcode, InstructionSGT.class);
+		instructions.put(InstructionEQ.opcode, InstructionEQ.class);
+		instructions.put(InstructionISZERO.opcode, InstructionISZERO.class);
+		instructions.put(InstructionAND.opcode, InstructionAND.class);
+		instructions.put(InstructionOR.opcode, InstructionOR.class);
+		instructions.put(InstructionXOR.opcode, InstructionXOR.class);
+		instructions.put(InstructionNOT.opcode, InstructionNOT.class);
+		instructions.put(InstructionBYTE.opcode, InstructionBYTE.class);
+
+		// 20s: SHA3
+		instructions.put(InstructionSHA3.opcode, InstructionSHA3.class);
+
+		// 30s: Environmental Information - 48
+		instructions.put(InstructionADDRESS.opcode, InstructionADDRESS.class);
+		instructions.put(InstructionBALANCE.opcode, InstructionBALANCE.class);
+		instructions.put(InstructionORIGIN.opcode, InstructionORIGIN.class);
+		instructions.put(InstructionCALLER.opcode, InstructionCALLER.class);
+		instructions.put(InstructionCALLVALUE.opcode, InstructionCALLVALUE.class);
+		instructions.put(InstructionCALLDATALOAD.opcode, InstructionCALLDATALOAD.class);
+		instructions.put(InstructionCALLDATASIZE.opcode, InstructionCALLDATASIZE.class);
+		instructions.put(InstructionCALLDATACOPY.opcode, InstructionCALLDATACOPY.class);
+		instructions.put(InstructionCODESIZE.opcode, InstructionCODESIZE.class);
+		instructions.put(InstructionCODECOPY.opcode, InstructionCODECOPY.class);
+		instructions.put(InstructionGASPRICE.opcode, InstructionGASPRICE.class);
+		instructions.put(InstructionEXTCODESIZE.opcode, InstructionEXTCODESIZE.class);
+		instructions.put(InstructionEXTCODECOPY.opcode, InstructionEXTCODECOPY.class);
+
+		// 40s: Block Information		
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		
+		
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+		instructions.put(Instruction.opcode, Instruction.class);
+
+	}
+
+	public static Instruction createInstruction(String content, int index) {
+
+		String strCode = content.substring(index, index + 2);
+
+		// int code = Integer.valueOf(strCode, 16);
+
+		if (InstructionADD.NAME.equalsIgnoreCase(content)) {
+			return new Instruction(content, index);
+		} else if (InstructionADD.NAME.equalsIgnoreCase(content)) {
+			return new Instruction(content, index);
+		}
+		return null;
+	}
+
+}

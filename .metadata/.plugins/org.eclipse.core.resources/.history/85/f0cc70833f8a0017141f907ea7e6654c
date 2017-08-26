@@ -1,0 +1,185 @@
+package org.icedev.eoc.instructions;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class InstructionsFactory {
+
+	public static Map<Integer, Class<? extends Instruction>> instructions = new HashMap<Integer, Class<? extends Instruction>>() {
+		// 0s: Stop and Arithmetic Operations
+		{
+		put(InstructionSTOP.opcode, InstructionSTOP.class);
+		put(InstructionADD.opcode, InstructionADD.class);
+		instructions.put(InstructionMUL.opcode, InstructionMUL.class);
+		instructions.put(InstructionSUB.opcode, InstructionSUB.class);
+		instructions.put(InstructionDIV.opcode, InstructionDIV.class);
+		instructions.put(InstructionSDIV.opcode, InstructionSDIV.class);
+		instructions.put(InstructionMOD.opcode, InstructionMOD.class);
+		instructions.put(InstructionSMOD.opcode, InstructionSMOD.class);
+		instructions.put(InstructionADDMOD.opcode, InstructionADDMOD.class);
+		instructions.put(InstructionMULMOD.opcode, InstructionMULMOD.class);
+		instructions.put(InstructionEXP.opcode, InstructionEXP.class);
+		instructions.put(InstructionSIGNEXTEND.opcode, InstructionSIGNEXTEND.class);
+
+		// 10s: Comparison & Bitwise Logic Operations
+		instructions.put(InstructionLT.opcode, InstructionLT.class);
+		instructions.put(InstructionGT.opcode, InstructionGT.class);
+		instructions.put(InstructionSLT.opcode, InstructionSLT.class);
+		instructions.put(InstructionSGT.opcode, InstructionSGT.class);
+		instructions.put(InstructionEQ.opcode, InstructionEQ.class);
+		instructions.put(InstructionISZERO.opcode, InstructionISZERO.class);
+		instructions.put(InstructionAND.opcode, InstructionAND.class);
+		instructions.put(InstructionOR.opcode, InstructionOR.class);
+		instructions.put(InstructionXOR.opcode, InstructionXOR.class);
+		instructions.put(InstructionNOT.opcode, InstructionNOT.class);
+		instructions.put(InstructionBYTE.opcode, InstructionBYTE.class);
+
+		// 20s: SHA3
+		instructions.put(InstructionSHA3.opcode, InstructionSHA3.class);
+
+		// 30s: Environmental Information - 48
+		instructions.put(InstructionADDRESS.opcode, InstructionADDRESS.class);
+		instructions.put(InstructionBALANCE.opcode, InstructionBALANCE.class);
+		instructions.put(InstructionORIGIN.opcode, InstructionORIGIN.class);
+		instructions.put(InstructionCALLER.opcode, InstructionCALLER.class);
+		instructions.put(InstructionCALLVALUE.opcode, InstructionCALLVALUE.class);
+		instructions.put(InstructionCALLDATALOAD.opcode, InstructionCALLDATALOAD.class);
+		instructions.put(InstructionCALLDATASIZE.opcode, InstructionCALLDATASIZE.class);
+		instructions.put(InstructionCALLDATACOPY.opcode, InstructionCALLDATACOPY.class);
+		instructions.put(InstructionCODESIZE.opcode, InstructionCODESIZE.class);
+		instructions.put(InstructionCODECOPY.opcode, InstructionCODECOPY.class);
+		instructions.put(InstructionGASPRICE.opcode, InstructionGASPRICE.class);
+		instructions.put(InstructionEXTCODESIZE.opcode, InstructionEXTCODESIZE.class);
+		instructions.put(InstructionEXTCODECOPY.opcode, InstructionEXTCODECOPY.class);
+
+		// 40s: Block Information
+		instructions.put(InstructionBLOCKHASH.opcode, InstructionBLOCKHASH.class);
+		instructions.put(InstructionCOINBASE.opcode, InstructionCOINBASE.class);
+		instructions.put(InstructionTIMESTAMP.opcode, InstructionTIMESTAMP.class);
+		instructions.put(InstructionNUMBER.opcode, InstructionNUMBER.class);
+		instructions.put(InstructionDIFFICULTY.opcode, InstructionDIFFICULTY.class);
+		instructions.put(InstructionGASLIMIT.opcode, InstructionGASLIMIT.class);
+
+		// 50s Stack, Memory, Storage and Flow Operations
+		instructions.put(InstructionPOP.opcode, InstructionPOP.class);
+		instructions.put(InstructionMLOAD.opcode, InstructionMLOAD.class);
+		instructions.put(InstructionMSTORE.opcode, InstructionMSTORE.class);
+		instructions.put(InstructionMSTORE8.opcode, InstructionMSTORE8.class);
+		instructions.put(InstructionSLOAD.opcode, InstructionSLOAD.class);
+		instructions.put(InstructionSSTORE.opcode, InstructionSSTORE.class);
+		instructions.put(InstructionJUMP.opcode, InstructionJUMP.class);
+		instructions.put(InstructionJUMPI.opcode, InstructionJUMPI.class);
+		instructions.put(InstructionPC.opcode, InstructionPC.class);
+		instructions.put(InstructionMSIZE.opcode, InstructionMSIZE.class);
+		instructions.put(InstructionGAS.opcode, InstructionGAS.class);
+		instructions.put(InstructionJUMPDEST.opcode, InstructionJUMPDEST.class);
+
+		// 60s & 70s: Push Operations
+		instructions.put(InstructionPUSH1.opcode, InstructionPUSH1.class);
+		instructions.put(InstructionPUSH2.opcode, InstructionPUSH2.class);
+		instructions.put(InstructionPUSH3.opcode, InstructionPUSH3.class);
+		instructions.put(InstructionPUSH4.opcode, InstructionPUSH4.class);
+		instructions.put(InstructionPUSH5.opcode, InstructionPUSH5.class);
+		instructions.put(InstructionPUSH6.opcode, InstructionPUSH6.class);
+		instructions.put(InstructionPUSH7.opcode, InstructionPUSH7.class);
+		instructions.put(InstructionPUSH8.opcode, InstructionPUSH8.class);
+		instructions.put(InstructionPUSH9.opcode, InstructionPUSH9.class);
+		instructions.put(InstructionPUSH10.opcode, InstructionPUSH10.class);
+		instructions.put(InstructionPUSH11.opcode, InstructionPUSH11.class);
+		instructions.put(InstructionPUSH12.opcode, InstructionPUSH12.class);
+		instructions.put(InstructionPUSH13.opcode, InstructionPUSH13.class);
+		instructions.put(InstructionPUSH14.opcode, InstructionPUSH14.class);
+		instructions.put(InstructionPUSH15.opcode, InstructionPUSH15.class);
+		instructions.put(InstructionPUSH16.opcode, InstructionPUSH16.class);
+		instructions.put(InstructionPUSH17.opcode, InstructionPUSH17.class);
+		instructions.put(InstructionPUSH18.opcode, InstructionPUSH18.class);
+		instructions.put(InstructionPUSH19.opcode, InstructionPUSH19.class);
+		instructions.put(InstructionPUSH20.opcode, InstructionPUSH20.class);
+		instructions.put(InstructionPUSH21.opcode, InstructionPUSH21.class);
+		instructions.put(InstructionPUSH22.opcode, InstructionPUSH22.class);
+		instructions.put(InstructionPUSH23.opcode, InstructionPUSH23.class);
+		instructions.put(InstructionPUSH24.opcode, InstructionPUSH24.class);
+		instructions.put(InstructionPUSH25.opcode, InstructionPUSH25.class);
+		instructions.put(InstructionPUSH26.opcode, InstructionPUSH26.class);
+		instructions.put(InstructionPUSH27.opcode, InstructionPUSH27.class);
+		instructions.put(InstructionPUSH28.opcode, InstructionPUSH28.class);
+		instructions.put(InstructionPUSH29.opcode, InstructionPUSH29.class);
+		instructions.put(InstructionPUSH30.opcode, InstructionPUSH30.class);
+		instructions.put(InstructionPUSH31.opcode, InstructionPUSH31.class);
+		instructions.put(InstructionPUSH32.opcode, InstructionPUSH32.class);
+
+		// 80s: Duplication Operations
+		instructions.put(InstructionDUP1.opcode, InstructionDUP1.class);
+		instructions.put(InstructionDUP2.opcode, InstructionDUP2.class);
+		instructions.put(InstructionDUP3.opcode, InstructionDUP3.class);
+		instructions.put(InstructionDUP4.opcode, InstructionDUP4.class);
+		instructions.put(InstructionDUP5.opcode, InstructionDUP5.class);
+		instructions.put(InstructionDUP6.opcode, InstructionDUP6.class);
+		instructions.put(InstructionDUP7.opcode, InstructionDUP7.class);
+		instructions.put(InstructionDUP8.opcode, InstructionDUP8.class);
+		instructions.put(InstructionDUP9.opcode, InstructionDUP9.class);
+		instructions.put(InstructionDUP10.opcode, InstructionDUP10.class);
+		instructions.put(InstructionDUP11.opcode, InstructionDUP11.class);
+		instructions.put(InstructionDUP12.opcode, InstructionDUP12.class);
+		instructions.put(InstructionDUP13.opcode, InstructionDUP13.class);
+		instructions.put(InstructionDUP14.opcode, InstructionDUP14.class);
+		instructions.put(InstructionDUP15.opcode, InstructionDUP15.class);
+		instructions.put(InstructionDUP16.opcode, InstructionDUP16.class);
+
+		// 90s: Exchange Operations
+		instructions.put(InstructionSWAP1.opcode, InstructionSWAP1.class);
+		instructions.put(InstructionSWAP2.opcode, InstructionSWAP2.class);
+		instructions.put(InstructionSWAP3.opcode, InstructionSWAP3.class);
+		instructions.put(InstructionSWAP4.opcode, InstructionSWAP4.class);
+		instructions.put(InstructionSWAP5.opcode, InstructionSWAP5.class);
+		instructions.put(InstructionSWAP6.opcode, InstructionSWAP6.class);
+		instructions.put(InstructionSWAP7.opcode, InstructionSWAP7.class);
+		instructions.put(InstructionSWAP8.opcode, InstructionSWAP8.class);
+		instructions.put(InstructionSWAP9.opcode, InstructionSWAP9.class);
+		instructions.put(InstructionSWAP10.opcode, InstructionSWAP10.class);
+		instructions.put(InstructionSWAP11.opcode, InstructionSWAP11.class);
+		instructions.put(InstructionSWAP12.opcode, InstructionSWAP12.class);
+		instructions.put(InstructionSWAP13.opcode, InstructionSWAP13.class);
+		instructions.put(InstructionSWAP14.opcode, InstructionSWAP14.class);
+		instructions.put(InstructionSWAP15.opcode, InstructionSWAP15.class);
+		instructions.put(InstructionSWAP16.opcode, InstructionSWAP16.class);
+
+		// a0s: Logging Operations
+		instructions.put(InstructionLOG0.opcode, InstructionLOG0.class);
+		instructions.put(InstructionLOG1.opcode, InstructionLOG1.class);
+		instructions.put(InstructionLOG2.opcode, InstructionLOG2.class);
+		instructions.put(InstructionLOG3.opcode, InstructionLOG3.class);
+		instructions.put(InstructionLOG4.opcode, InstructionLOG4.class);
+
+		// f0s: System operations
+		instructions.put(InstructionCREATE.opcode, InstructionCREATE.class);
+		instructions.put(InstructionCALL.opcode, InstructionCALL.class);
+		instructions.put(InstructionCALLCODE.opcode, InstructionCALLCODE.class);
+		instructions.put(InstructionRETURN.opcode, InstructionRETURN.class);
+		instructions.put(InstructionDELEGATECALL.opcode, InstructionDELEGATECALL.class);
+
+		// Halt Execution, Mark for deletion
+		instructions.put(InstructionSELFDESTRUCT.opcode, InstructionSELFDESTRUCT.class);
+
+	}}
+
+	public static Instruction createInstruction(String content, int index)
+			throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException,
+			IllegalArgumentException, InvocationTargetException {
+
+		String strCode = content.substring(index, index + 2);
+
+		int code = Integer.valueOf(strCode, 16);
+
+		Class<? extends Instruction> instructionClass = instructions.get(code);
+
+		Constructor<? extends Instruction> constructor = instructionClass.getConstructor(String.class, int.class);
+
+		Instruction instruction = constructor.newInstance(strCode, index);
+
+		return instruction;
+	}
+
+}

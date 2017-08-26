@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionDIFFICULTY extends Instruction {
+
+	public static final String NAME = "NUMBER";
+
+	public static int opcode = 67;
+
+	public InstructionDIFFICULTY(String content, int index) {
+		super(content, index);
+	}
+
+}

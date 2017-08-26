@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionJUMPDEST extends Instruction {
+
+	public static final String NAME = "GAS";
+
+	public static int opcode = 90;
+
+	public InstructionJUMPDEST(String content, int index) {
+		super(content, index);
+	}
+
+}

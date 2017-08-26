@@ -1,0 +1,23 @@
+package org.icedev.eoc.instructions;
+
+public class AbstractInstructionPUSH extends Instruction {
+
+	public static final String NAME = "PUSH";
+
+	public int n;
+
+	public AbstractInstructionPUSH(String content, int index) {
+		super(content, index);
+	}
+
+	@Override
+	public int endPos() {
+		return super.endPos() + 2;
+	}
+
+	@Override
+	public String getName() {
+		return NAME + n;
+	}
+
+}

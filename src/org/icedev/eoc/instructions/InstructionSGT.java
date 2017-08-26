@@ -1,0 +1,18 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionSGT extends Instruction {
+
+	public static final String NAME = "SGT";
+
+	public static int opcode = 19;
+
+	public InstructionSGT(String content, int index) {
+		super(content, index);
+	}
+	
+	@Override
+	public String getName() {
+		return NAME;
+	}
+
+}

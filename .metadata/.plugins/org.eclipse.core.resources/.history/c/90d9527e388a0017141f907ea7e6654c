@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionPC extends Instruction {
+
+	public static final String NAME = "JUMPI";
+
+	public static int opcode = 87;
+
+	public InstructionPC(String content, int index) {
+		super(content, index);
+	}
+
+}

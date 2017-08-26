@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionGAS extends Instruction {
+
+	public static final String NAME = "MSIZE";
+
+	public static int opcode = 89;
+
+	public InstructionGAS(String content, int index) {
+		super(content, index);
+	}
+
+}

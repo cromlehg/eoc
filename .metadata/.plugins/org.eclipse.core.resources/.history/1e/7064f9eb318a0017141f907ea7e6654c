@@ -1,0 +1,7 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionSIGNEXTEND extends Instruction {
+
+	public static final String NAME = "SIGNEXTEND";
+	
+}

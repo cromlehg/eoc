@@ -1,0 +1,18 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionSHA3 extends Instruction {
+
+	public static final String NAME = "SHA3";
+
+	public static int opcode = 32;
+
+	public InstructionSHA3(String content, int index) {
+		super(content, index);
+	}
+	
+	@Override
+	public String getName() {
+		return NAME;
+	}
+
+}

@@ -1,0 +1,14 @@
+package org.icedev.eoc.instructions;
+
+public class Instruction {
+
+	String content;
+	
+	int iodex;
+	
+	public Instruction(String content, int index) {
+		this.content = content;
+		this.idnex = index;
+	}
+	
+}

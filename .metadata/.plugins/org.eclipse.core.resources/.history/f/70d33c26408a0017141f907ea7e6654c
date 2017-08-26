@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionCALLCODE extends Instruction {
+
+	public static final String NAME = "CALLCODE";
+
+	public static int opcode = 242;
+
+	public InstructionCALLCODE(String content, int index) {
+		super(content, index);
+	}
+
+}

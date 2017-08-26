@@ -1,0 +1,18 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionsFactory {
+
+	public static Instruction createInstruction(String content, int index) {
+
+		String strCode = content.substring(index, index + 2);
+
+		int code = Integer.toHexString(strCode);
+
+		if (InstructionADD.NAME.equalsIgnoreCase(content)) {
+			return new Instruction(content, index);
+		} else if (InstructionADD.NAME.equalsIgnoreCase(content)) {
+			return new Instruction(content, index);
+		}
+	}
+
+}

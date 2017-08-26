@@ -1,0 +1,28 @@
+package org.icedev.eoc;
+
+import org.icedev.eoc.instructions.Instruction;
+import org.icedev.eoc.instructions.InstructionADD;
+
+public class Runner1 {
+	
+	public static void main(String[] args) {
+//		String content = "6060604052341561000f57600080fd5b5b60d98061001e6000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063e1c7392a14603d575b600080fd5b3415604757600080fd5b604d604f565b005b3373ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614151560a957600080fd5b5b5b5600a165627a7a723058205d0f3008151e8da518c2ad187b64bf2e3234534ee745ac3bbb61c688d9133a940029";
+//		
+//		int startIndex = 0;
+//		int endIndex  = 2;
+//
+//		String strInstr = "";
+//		while(endIndex < content.length()) {
+//			strInstr += content.substring(startIndex, endIndex);
+//			if(strInstr.equalsIgnoreCase(anotherString))
+//		}
+		
+		
+		Instruction ia = new InstructionADD();
+		ia.test();
+		
+	}
+	
+	 
+
+}

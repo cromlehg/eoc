@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionCOINBASE extends Instruction {
+
+	public static final String NAME = "BLOCKHASH";
+
+	public static int opcode = 64;
+
+	public InstructionCOINBASE(String content, int index) {
+		super(content, index);
+	}
+
+}

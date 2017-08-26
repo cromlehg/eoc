@@ -1,0 +1,11 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionMULMOD extends Instruction {
+	
+	public InstructionMULMOD(String content, int index) {
+		super(content, index);
+	}
+
+	public static final String NAME = "MULMOD";
+
+}

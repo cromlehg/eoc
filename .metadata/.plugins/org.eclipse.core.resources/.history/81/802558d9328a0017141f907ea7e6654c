@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionSUB extends Instruction {
+
+	public static final String NAME = "SUB";
+	
+	public int opcode = 3;
+	
+	public InstructionSUB(String content, int index) {
+		super(content, index);
+	}
+	
+}

@@ -1,0 +1,24 @@
+package org.icedev.eoc.instructions;
+
+public abstract class AbstractInstructionWithNumber extends Instruction {
+
+	public int n;
+
+	public AbstractInstructionWithNumber(int n, String content, int index) {
+		super(content, index);
+		this.n = n;
+	}
+
+	@Override
+	public int endPos() {
+		return super.endPos() + 2;
+	}
+
+	abstract public String getNameBase();
+
+	@Override
+	public String getName() {
+		return getNameBase() + n;
+	}
+
+}

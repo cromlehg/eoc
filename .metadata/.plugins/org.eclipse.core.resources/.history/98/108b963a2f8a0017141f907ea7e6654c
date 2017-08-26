@@ -1,0 +1,11 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionADD extends Instruction {
+
+	@Override
+	public void test() {
+		
+	}
+
+
+}

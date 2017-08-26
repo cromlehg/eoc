@@ -1,0 +1,18 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionGASLIMIT extends Instruction {
+
+	public static final String NAME = "GASLIMIT";
+
+	public static int opcode = 69;
+
+	public InstructionGASLIMIT(String content, int index) {
+		super(content, index);
+	}
+
+	@Override
+	public String getName() {
+		return NAME;
+	}
+
+}

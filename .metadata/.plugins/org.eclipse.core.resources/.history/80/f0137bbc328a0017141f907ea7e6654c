@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionDIV extends Instruction {
+	
+	public static final String NAME = "DIV";
+	
+	public int opcode = 3;
+
+	public InstructionDIV(String content, int index) {
+		super(content, index);
+	}
+	
+}

@@ -1,0 +1,15 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionDUP3 extends AbstractInstructionDUP {
+	
+	public static final int n = 3;
+	
+	public static final String NAME = ABSTRACT_NAME + n;
+	
+	public static int opcode = 130;
+
+	public InstructionDUP3(String content, int index) {
+		super(content, index);
+	}
+
+}

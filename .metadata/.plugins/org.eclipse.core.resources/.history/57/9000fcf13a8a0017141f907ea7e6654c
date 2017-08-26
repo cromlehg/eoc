@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionPUSH21 extends AbstractInstructionPUSH {
+	
+	public static final String NAME = "PUSH1";
+	
+	public static int opcode = 96;
+
+	public InstructionPUSH21(String content, int index) {
+		super(content, index);
+	}
+	
+}

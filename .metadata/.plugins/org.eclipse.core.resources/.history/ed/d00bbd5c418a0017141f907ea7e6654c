@@ -1,0 +1,16 @@
+package org.icedev.eoc.instructions;
+
+public class AbstractInstructionDUP extends Instruction {
+	
+	public static final String PART_NAME = "DUP";
+
+	public AbstractInstructionDUP(String content, int index) {
+		super(content, index);
+	}
+
+	@Override
+	public int endPos() {
+		return super.endPos() + 2;
+	}
+
+}

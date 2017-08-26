@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionXOR extends Instruction {
+
+	public static final String NAME = "OR";
+
+	public static int opcode = 23;
+
+	public InstructionXOR(String content, int index) {
+		super(content, index);
+	}
+
+}

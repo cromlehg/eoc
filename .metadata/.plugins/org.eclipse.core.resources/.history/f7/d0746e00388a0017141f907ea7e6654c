@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionGASLIMIT extends Instruction {
+
+	public static final String NAME = "DIFFICULTY";
+
+	public static int opcode = 68;
+
+	public InstructionGASLIMIT(String content, int index) {
+		super(content, index);
+	}
+
+}

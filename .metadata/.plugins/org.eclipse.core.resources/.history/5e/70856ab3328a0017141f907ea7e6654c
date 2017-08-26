@@ -1,0 +1,13 @@
+package org.icedev.eoc.instructions;
+
+public class InstructionSTOP extends Instruction {
+
+	public static final String NAME = "STOP";
+	
+	public int opcode = 0;
+
+	public InstructionSTOP(String content, int index) {
+		super(content, index);
+	}
+	
+}
