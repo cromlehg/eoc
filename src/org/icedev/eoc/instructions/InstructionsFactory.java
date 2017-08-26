@@ -39,7 +39,7 @@ public class InstructionsFactory {
 			put(InstructionBYTE.opcode, InstructionBYTE.class);
 
 			// 20s: SHA3
-			put(InstructionKECCAK256.opcode, InstructionKECCAK256.class);
+			put(InstructionKECCAK256.opcode, InstructionKECCAK256.class); // How to encode - size?
 
 			// 30s: Environmental Information - 48
 			put(InstructionADDRESS.opcode, InstructionADDRESS.class);
@@ -165,11 +165,11 @@ public class InstructionsFactory {
 
 			// ???
 			put(InstructionREVERT.opcode, InstructionREVERT.class);
-			
+
+			// put(InstructionINVALID.opcode, InstructionINVALID.class);
+
 			// Halt Execution, Mark for deletion
 			put(InstructionSELFDESTRUCT.opcode, InstructionSELFDESTRUCT.class);
-			
-			
 
 		}
 	};
@@ -180,13 +180,18 @@ public class InstructionsFactory {
 
 		String strCode = content.substring(index, index + 2);
 
+		String strCode1 = content.substring(index);
+
 		int code = Integer.valueOf(strCode, 16);
-		
-//		if(code == 143) {
-//			System.out.println("8f");
-//		}
+
+		// if(code == 143) {
+		// System.out.println("8f");
+		// }
 
 		Class<? extends Instruction> instructionClass = instructions.get(code);
+
+		if (instructionClass == null)
+			instructionClass = InstructionINVALID.class;
 
 		Constructor<? extends Instruction> constructor = instructionClass.getConstructor(String.class, int.class);
 

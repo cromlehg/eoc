@@ -15,7 +15,7 @@ public class InstructionKECCAK256 extends Instruction {
 		return NAME;
 	}
 
-	@Override
+	/*@Override
 	public int endPos() {
 		return super.endPos() + SIZE;
 	}
@@ -27,6 +27,6 @@ public class InstructionKECCAK256 extends Instruction {
 	@Override
 	public String toString() {
 		return super.toString() + " " + getValue();
-	}
+	}*/
 
 }
